@@ -111,6 +111,24 @@ Surwish OS will continue to evolve thanks to your feedback, ideas, and contribut
 **Made with passion. Powered by the community.**
 
 
+## 📥 Installation
+------------------
+
+### 1. Download the package
+Simply download [Surwish-OS ZIP archive](https://github.com/Surwish/Surwish-Miyoo-Flip/archive/refs/heads/main.zip)
+
+
+### 2. Prepare the microSD card
+- Format the card as **FAT32**.  
+- Extract the downloaded ZIP file to the **root** of the microSD card.
+
+### 3. Set up on the console
+- Insert the card into the **right slot** of your Miyoo Flip.  
+- Power on the device.
+
+🎉 **All done! Enjoy your Surwish setup.**
+
+
 🤝 Credits
 ==========
 
