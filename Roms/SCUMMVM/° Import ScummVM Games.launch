@@ -91,18 +91,12 @@ main() {
 
         # infoPanel -t "$ui_title" -m "$result_message" --auto 2> /dev/null
         pkill -f sdl2imgshow
-        Current_bg="$Current_Theme/skin/bg.png"
+        Current_Theme=$(/usr/miyoo/bin/jsonval theme)
+        Current_bg="$Current_Theme/skin/background.png"
         if [ ! -f "$Current_bg" ]; then
-            Current_bg="/mnt/SDCARD/trimui/res/skin/transparent.png"
+            Current_bg="/mnt/SDCARD/System/res/skin/transparent.png"
         fi
-        /mnt/SDCARD/System/bin/sdl2imgshow \
-            -i "$Current_bg" \
-            -f "/mnt/SDCARD/System/resources/DejaVuSans.ttf" \
-            -s 30 \
-            -c "220,220,220" \
-            -t "$result_message" &
-        sleep 0.3
-        pkill -f sdl2imgshow
+        /mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i "$Current_bg" -m "$result_message" -t 2
     )
 
     # rm -f /tmp/dismiss_info_panel 2> /dev/null
