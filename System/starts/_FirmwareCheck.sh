@@ -50,7 +50,7 @@ else
         # Install new busybox from PortMaster, credits : https://github.com/kloptops/TRIMUI_EX
 
         # Current_busybox_crc=$(crc32 "/bin/busybox" | awk '{print $1}')
-        # target_busybox_crc=$(crc32 "/mnt/SDCARD/System/usr/trimui/scripts/busybox" | awk '{print $1}')
+        # target_busybox_crc=$(crc32 "/mnt/SDCARD/System/usr/miyoo/scripts/busybox" | awk '{print $1}')
 
         # if [ "$Current_busybox_crc" != "$target_busybox_crc" ]; then
 
@@ -59,10 +59,10 @@ else
         # rm -rf /usr/trimui/res/sound/bgm2.mp3
         # swapoff -a
         # rm -rf /swapfile
-        # cp "/mnt/SDCARD/trimui/res/skin/bg.png" "/usr/trimui/res/skin/"
+        # cp "/mnt/SDCARD/System/res/skin/bg.png" "/usr/trimui/res/skin/"
 
         # cp -vf /bin/busybox /mnt/SDCARD/System/bin/busybox.bak
-        # /mnt/SDCARD/System/bin/rsync /mnt/SDCARD/System/usr/trimui/scripts/busybox /bin/busybox
+        # /mnt/SDCARD/System/bin/rsync /mnt/SDCARD/System/usr/miyoo/scripts/busybox /bin/busybox
         # ln -vs "/bin/busybox" "/bin/bash"
 
         # Create missing busybox commands

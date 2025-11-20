@@ -70,10 +70,10 @@ font_size=22
 color="220,220,220"
 
 Current_Theme=$(/usr/miyoo/bin/jsonval Theme)
-CrossMix_Style=$(/mnt/SDCARD/System/bin/jq -r '.["CROSSMIX STYLE"]' "/mnt/SDCARD/System/etc/crossmix.json")
+Surwish_Style=$(/mnt/SDCARD/System/bin/jq -r '.["SURWISH STYLE"]' "/mnt/SDCARD/System/etc/surwish.json")
 
 # Determine font path : by default we take the one from the current theme
-Current_font=$(/mnt/SDCARD/System/bin/jq -r '.["font"]' "/mnt/SDCARD/Themes/$Current_Theme/config.json")
+Current_font=$(/mnt/SDCARD/System/bin/jq -r '.title.font' "$Current_Theme/config.json")
 if [ -f "/mnt/SDCARD/Themes/$Current_Theme/$Current_font" ]; then
     font_file="/mnt/SDCARD/Themes/$Current_Theme/$Current_font"
 fi
@@ -151,7 +151,7 @@ determine_image_path() {
     fi
 
     # Check if themed image exists
-    themed_image="$base_path/style_$CrossMix_Style/$image_name"
+    themed_image="$base_path/style_$Surwish_Style/$image_name"
     if [ -f "$themed_image" ]; then
         echo "$themed_image"
         return
@@ -173,7 +173,7 @@ image=$(determine_image_path "$image")
 # Set the library path
 
 
-touch /var/trimui_inputd/sticks_disabled
+# touch /var/trimui_inputd/sticks_disabled
 pkill -9 sdl2imgshow
 
 # Run the sdl2imgshow command
@@ -224,5 +224,5 @@ fi
 
 pkill -f sdl2imgshow
 
-rm /var/trimui_inputd/sticks_disabled
+# rm /var/trimui_inputd/sticks_disabled
 # echo ondemand >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor

@@ -16,9 +16,9 @@ if [ "$romName" = "° Import ScummVM Games.launch" ]; then
 	Current_Theme=$(/usr/trimui/bin/systemval theme)
 	Current_bg="$Current_Theme/skin/bg.png"
 	if [ ! -f "$Current_bg" ]; then
-		Current_bg="/mnt/SDCARD/trimui/res/skin/transparent.png"
+		Current_bg="/mnt/SDCARD/System/res/skin/transparent.png"
 	fi
-	/mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i "$Current_bg" -m "Importing ScummVM games."
+	/mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i "$Current_bg" -m "Importing ScummVM games."
 	sh "$Rom"
 	sleep 0.3
 	exit

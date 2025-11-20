@@ -5,7 +5,7 @@ cpufreq.sh ondemand 5 7
 cd $RA_DIR/
 
 if ! find "/mnt/SDCARD/BIOS" -maxdepth 1 -iname "scph*" -o -iname "psxonpsp660.bin" -o -iname "ps*.bin" | grep -q .; then
-    /mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i bg-exit.png -m "No bios found, SwanStation will probably not work." -k " "
+    /mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i bg-exit.png -m "No bios found, SwanStation will probably not work." -k " "
 fi
 
 # Variable for the path to the SwanStation directory
@@ -36,8 +36,8 @@ if [ ! -f "$ROM_CFG" ] && [ ! -f "$ROM_OPT" ]; then
     echo "Copied $PS_OPT to $ROM_OPT"
 
     # Apply the configuration patches
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$SWANSTATION_DIR/widescreen.cfg" "$ROM_CFG"
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$SWANSTATION_DIR/widescreen.opt" "$ROM_OPT"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$SWANSTATION_DIR/widescreen.cfg" "$ROM_CFG"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$SWANSTATION_DIR/widescreen.opt" "$ROM_OPT"
     echo "Patch applied to $ROM_CFG"
     echo "Patch applied to $ROM_OPT"
     HOME=$RA_DIR/ $RA_DIR/ra64.miyoo -v -L $RA_DIR/.retroarch/cores/swanstation_libretro.so "$@"

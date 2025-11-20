@@ -39,9 +39,9 @@ if [ ! -f "$ROM_CFG" ] && [ ! -f "$ROM_OPT" ]; then
 
     # Apply the configuration patches
 
-    echo "/mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh $MUPEN_DIR/widescreen.cfg $ROM_CFG"
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$MUPEN_DIR/widescreen.cfg" "$ROM_CFG"
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$MUPEN_DIR/widescreen.opt" "$ROM_OPT"
+    echo "/mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh $MUPEN_DIR/widescreen.cfg $ROM_CFG"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$MUPEN_DIR/widescreen.cfg" "$ROM_CFG"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$MUPEN_DIR/widescreen.opt" "$ROM_OPT"
     echo "Patch applied to $ROM_CFG"
     echo "Patch applied to $ROM_OPT"
 

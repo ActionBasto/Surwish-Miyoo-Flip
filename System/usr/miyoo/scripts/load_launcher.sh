@@ -1,4 +1,4 @@
-export PATH="/mnt/SDCARD/System/usr/trimui/scripts/:/mnt/SDCARD/System/bin:${PATH:+:$PATH}"
+export PATH="/mnt/SDCARD/System/usr/miyoo/scripts/:/mnt/SDCARD/System/bin:${PATH:+:$PATH}"
 export LD_LIBRARY_PATH="/usr/trimui/lib:${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
 EMU_DIR="$(echo "$0" | sed -E 's|(.*Emu/[^/]+)/.*|\1|')"

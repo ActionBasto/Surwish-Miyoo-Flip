@@ -64,7 +64,7 @@ else
     esac
 
     cd /mnt/SDCARD/RetroArch/
-    HOME=/mnt/SDCARD/RetroArch/ ./ra64.trimui -v -L ".retroarch/cores/$core" "$RomFullPath"
+    HOME=/mnt/SDCARD/RetroArch/ ./retroarch -v -L ".retroarch/cores/$core" "$RomFullPath"
     #########################################################################################
 
 fi

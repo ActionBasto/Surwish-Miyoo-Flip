@@ -2,11 +2,11 @@
 
 #pid=`ps | grep cmd_to_run | grep -v grep | sed 's/[ ]\+/ /g' | cut -d' ' -f1`
 
-/mnt/SDCARD/System/usr/trimui/scripts/button_state.sh MENU
+/mnt/SDCARD/System/usr/miyoo/scripts/button_state.sh MENU
 exit_code=$?
 if [ $exit_code -eq 10 ]; then # we don't resume if menu is pressed during boot
    echo "=== Button MENU pressed ==="
-   /mnt/SDCARD/System/usr/trimui/scripts/cmd_to_run_killer.sh &
+   /mnt/SDCARD/System/usr/miyoo/scripts/cmd_to_run_killer.sh &
    # Short Vibration
    echo -n 1 >/sys/class/gpio/gpio227/value
    sleep 0.1
@@ -50,7 +50,7 @@ else
    Shutdown_Text=" "
 fi
 
-/mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i "$Shutdown_Screen" -m "$Shutdown_Text" -fs 100
+/mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i "$Shutdown_Screen" -m "$Shutdown_Text" -fs 100
 
 echo 1 >/sys/class/led_anim/effect_enable
 echo "FF0000" >/sys/class/led_anim/effect_rgb_hex_lr
@@ -95,5 +95,5 @@ sync
 /mnt/SDCARD/System/bin/shutdown
 
 sleep 8
-/mnt/SDCARD/System/usr/trimui/scripts/cmd_to_run_killer.sh
+/mnt/SDCARD/System/usr/miyoo/scripts/cmd_to_run_killer.sh
 poweroff &

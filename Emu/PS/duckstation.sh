@@ -5,7 +5,7 @@ source /mnt/SDCARD/System/usr/miyoo/scripts/common_launcher.sh
 cd $RA_DIR/
 
 if ! find "/mnt/SDCARD/BIOS" -maxdepth 1 -iname "scph*" -o -iname "psxonpsp660.bin" -o -iname "ps*.bin" | grep -q .; then
-	/mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i bg-exit.png -m "No bios found, DuckStation will probably not work." -k " "
+	/mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i bg-exit.png -m "No bios found, DuckStation will probably not work." -k " "
 fi
 
 

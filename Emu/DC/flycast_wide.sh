@@ -32,8 +32,8 @@ if [ ! -f "$ROM_CFG" ] && [ ! -f "$ROM_OPT" ]; then
     echo "Copied $DC_OPT to $ROM_OPT"
     
     # Apply the configuration patches
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$FLYCAST_DIR/widescreen.cfg" "$ROM_CFG"
-    /mnt/SDCARD/System/usr/trimui/scripts/patch_ra_cfg.sh "$FLYCAST_DIR/widescreen.opt" "$ROM_OPT"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$FLYCAST_DIR/widescreen.cfg" "$ROM_CFG"
+    /mnt/SDCARD/System/usr/miyoo/scripts/patch_ra_cfg.sh "$FLYCAST_DIR/widescreen.opt" "$ROM_OPT"
     echo "Patch applied to $ROM_CFG"
     echo "Patch applied to $ROM_OPT"
 	HOME=$RA_DIR/ $RA_DIR/ra64.miyoo -v -L $RA_DIR/.retroarch/cores/flycast_libretro.so "$@"

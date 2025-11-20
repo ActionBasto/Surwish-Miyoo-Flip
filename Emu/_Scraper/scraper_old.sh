@@ -8,7 +8,7 @@ log_file="/mnt/SDCARD/Apps/Scraper/scraper.log"
 
 
 if pgrep -f "/mnt/SDCARD/System/bin/scraper" > /dev/null; then
-    /mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i bg-stop-exit.png -m "A scraping task is already running in background." -t 3
+    /mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i bg-stop-exit.png -m "A scraping task is already running in background." -t 3
     exit
 fi
 
@@ -53,7 +53,7 @@ if [ -f "$ScraperConfigFile" ]; then
 
 
 		play_sound_after_scraping $SCRAP_PID &
-        /mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i bg-stop-exit.png -m "$1 scraping launched in background." -t 3
+        /mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i bg-stop-exit.png -m "$1 scraping launched in background." -t 3
 		exit
 	fi
 fi
@@ -62,7 +62,7 @@ fi
 
 
 
-"/mnt/SDCARD/System/usr/trimui/scripts/getkey.sh" B &
+"/mnt/SDCARD/System/usr/miyoo/scripts/getkey.sh" B &
 
 # Check if the scraping process is running
 scraping_running() {
@@ -77,7 +77,7 @@ while scraping_running; do
 
     info_count=$(grep -c "INFO: Starting:" "$log_file")
     error_count=$(grep -c "ERR: error processing" "$log_file")
-    /mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -i bg-stop-exit.png -m "Files processed: $info_count, Not found: $error_count" -fs 25 -t 3
+    /mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -i bg-stop-exit.png -m "Files processed: $info_count, Not found: $error_count" -fs 25 -t 3
 done
 
 # we exit getkey.sh script (and its child evtest processes)
@@ -86,7 +86,7 @@ for pid in $(pgrep -f getkey.sh); do pkill -TERM -P $pid; done
 info_count=$(grep -c "INFO: Starting:" "$log_file")
 error_count=$(grep -c "ERR: error processing" "$log_file")
 sleep 1
-/mnt/SDCARD/System/usr/trimui/scripts/infoscreen.sh -m "Scraping finished: Files processed: $info_count, Not found: $error_count" -t 4
+/mnt/SDCARD/System/usr/miyoo/scripts/infoscreen.sh -m "Scraping finished: Files processed: $info_count, Not found: $error_count" -t 4
 
 # Remove the first line from the recentlist.json file
 recentlist="/mnt/SDCARD/Roms/recentlist.json"
