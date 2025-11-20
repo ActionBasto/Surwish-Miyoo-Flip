@@ -105,7 +105,7 @@
   "ftpd": {
     "bindings": [
       {
-        "port": 0,
+        "port": 21,
         "address": "",
         "apply_proxy_config": true,
         "tls_mode": 0,
@@ -249,7 +249,7 @@
   "httpd": {
     "bindings": [
       {
-        "port": 8080,
+        "port": 80,
         "address": "",
         "enable_web_admin": false,
         "enable_web_client": true,
@@ -303,8 +303,8 @@
         },
         "branding": {
           "web_admin": {
-            "name": "",
-            "short_name": "",
+            "name": "Surwish-OS",
+            "short_name": "Surwish-OS",
             "favicon_path": "",
             "logo_path": "",
             "login_image_path": "",
@@ -314,8 +314,8 @@
             "extra_css": []
           },
           "web_client": {
-            "name": "",
-            "short_name": "",
+            "name": "Surwish-OS",
+            "short_name": "Surwish-OS",
             "favicon_path": "",
             "logo_path": "",
             "login_image_path": "",
